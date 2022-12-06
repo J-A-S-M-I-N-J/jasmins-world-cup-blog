@@ -1,1 +1,1 @@
-web: gunicorn jwcblog.wsgi
+web: gunicorn jasminsworldcupblog.wsgi

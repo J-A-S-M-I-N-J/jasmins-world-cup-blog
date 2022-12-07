@@ -1,6 +1,7 @@
 asgiref==3.5.2
 astroid==2.12.12
 autopep8==2.0.0
+bleach==5.0.1
 cachetools==5.2.0
 certifi==2022.9.24
 charset-normalizer==2.1.1
@@ -11,6 +12,7 @@ dill==0.3.5.1
 dj-database-url==0.5.0
 dj3-cloudinary-storage==0.0.6
 Django==3.2.16
+django-summernote==0.8.20.0
 Flask==2.2.2
 Flask-SQLAlchemy==2.5.1
 google-auth==2.13.0
@@ -44,5 +46,6 @@ tabulate==0.9.0
 tomli==2.0.1
 tomlkit==0.11.5
 urllib3==1.26.12
+webencodings==0.5.1
 Werkzeug==2.2.2
 wrapt==1.14.1

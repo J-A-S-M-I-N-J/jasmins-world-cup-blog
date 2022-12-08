@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'jasminsworldcupblog.urls'
+ROOT_URLCONF = 'jwcblog.urls'
 
 TEMPLATES = [
     {
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'jasminsworldcupblog.wsgi.application'
+WSGI_APPLICATION = 'jwcblog.wsgi.application'
 
 
 # Database

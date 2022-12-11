@@ -1,24 +1,30 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #a6baf1;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+.navbar-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #cf4f17;
+    text-decoration:none;
+    
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
+.text-center {
+padding-top: 10px;
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: rgb(237, 145, 145);
 }
 
 .dark-bg {
@@ -26,7 +32,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #c1f6b8;
 }
 
 .card {
@@ -43,13 +49,14 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #c1f6b8;
 }
 
 .author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    color: rgb(9, 1, 1);
+    margin: 4px;   
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .masthead {
@@ -63,7 +70,7 @@ body {
 
 .masthead-text {
     background-color: #445261;
-    color: white;
+    color: rgb(243, 241, 241);
     position: relative;
 }
 
@@ -88,12 +95,13 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #000203;
+    font-size: 1rem;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #e3c710;
 }
 
 .post-title {
@@ -139,4 +147,31 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.about-jwc {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.fun-fact-title {
+    margin-bottom: 5%;
+}
+
+.navbar {
+    
+    border: 1px solid #00000058;
+    border-radius: 0;
+
+}
+
+.page-title-logo {
+    width: 100%;
+    object-fit: cover;
+    padding-top: 20px;
+}
+
+.ig-link-footer {
+    color: #fff;
+    text-decoration: none;
 }

@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('jasminsworldcupblog.urls'), name='jasminsworldcupblog_urls'),
     path('summernote/', include('django_summernote.urls')),
+    path('accounts/', include('allauth.urls')),
+    # path('', include('jwcblog.urls'), name='jwc'),
 ]

@@ -1,108 +1,159 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Jasmin's World Cup Blog
 
-Welcome USER_NAME,
+- **Jasmin's World Cup Blog** is a place where you can find out about the latest news and updates regarding the World Cup 2022 in Qatar. Jasmin follows every game and every goal and will be posting relevant content during the duration of the Cup (and perhaps the next World Cup). The blog provides deep insight on the teams and and the players and gives predictions for the tournament. Jasmin/the creator of the site is a huge football fan and has been following the World Cup since 1998. He has been to the World Cup in 2010 and 2014 and is a big fan of Croatia, which is part of his family heritage. He is also a big fan of the Italian Serie A and follows the teams in the league closely.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- The goal of the blog is to share football knowledge surrounding the teams and help people predict results. The posts cover previous matchups, predicted line-ups and some story-telling around the squads. 
+- The purpose is also to collect donations to fund trips to upcoming World Cups through it's donation-page.
+- The site has an about page so that you can find out more fun-facts about the host and get to know him. 
+- The site has 6 posts per page ranked from latest-to-oldest directly on the landing page. 
+- The page is also looking for guest-writers to provide extra content, however these posts need to be approved by admin. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<img> ![A screenshot of the first Question on the page](assets/images/quiz-full-page.png)
 
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
+## Features
 ---
 
-Happy coding!
+### Navbar
+
+- The navbar has links to different pages, those are: Home, About, Donate, and Login/Logout. 
+
+### Landing Page
+
+- The landing page has functional links to each post, with an image, who the author is, and title of the post with a small excerpt. Below these is the post date together with the total amount of likes. At the bottom you can click a link so that you can write a guest-article. 
+
+<img> ![A screenshot showing the points being kept, timer going down and event listener triggering on click.](assets/images/game-area-green-button.png)
+
+### The Post-Pages
+
+- If you click the titles, you will get redirected to each post. These pages have Title and images in a neat design, and the body-text of the content below. Below the text you have buttons to like and bookmark the page. Below that you can write a comment, and view the comments on the post. The bookmark and ability to like will only be displayed if you are logged in. 
+
+### About
+
+- The About page is a simple static page with some text about Jasmin (creator of the page)
+
+### Donate
+
+- Donate-page is a page where I explain that the page needs funding in order to be able to run, and where Jasmin is trying to crowd-fund to be able to go to the World Cup. The donation-link is a paypal-image that leads right to the 'send-money' page on Paypal. 
+
+### Login/Logout
+
+- The link in the navbar leads you to a page where you can create an account and login. This is needed to be able to write guest-posts and like/bookmark items. When you're logged in, the navbart-link shows 'logout' and vice versa. 
+
+### Footer
+
+- Footer is simple with a text explaining where to go to follow me on socials. 
+
+<img> ![A screenshot of the pop-up form](assets/images/pop-up.png)
+
+<img> ![A screenshot of my g-mail inbox after playing the game](assets/images/e-mail-submission.png)
+
+## Testing
+
+- I conducted a test in Firefox and it was fully functional. The button styling looks a little different, but not much. And I think that the game actually runs better in FireFox because the page is loading everything first. Will elaborate on this in the Bugs-section. 
+- When testing in Safari the functionality was good, but just like on Chrome, sometimes the page doesen't load before the alert. Buttons looked the same as they did on FireFox. 
+- Chrome has been the main browser whilst creating this game, where additional testing has been done.
+  - Tested if all answers were correct. 
+  - Tested if there was a way to cheat the input form. 
+  - Also tested rushing the game and spam-clicking buttons. 
+    - During the development process, I did this a few times and it returned an error, I planned on finding it to add as a screen shot but it was something I couldn't replicate again.
+- Confirmed that the site is responsive and works on all different screensizes ranging from 320 pixels to 1200 pixels and above. This includes the pop-up. 
+- Confirmed that text is readable, buttons usable, and images are visible. 
+
+<img> ![Image of page on different screen-size](assets/images/responsiveness.png)
+
+## Bugs
+---
+### Solved Bugs
+
+- Difficulty getting images to be responsive, this was solved with adding several media queries that make the image smaller.
+
+- In the beginning, when clicking buttons they would change color, and the next question would show. However, the color then stayed on that button for the rest of the game, and eventually all buttons would carry colors from previous questions. 
+  - This was solved by delaying the loop using 'Promise' 'Resolve' 'Async 'Await', and adding it to the event listener. After the 'answer-button-color' there is a small delay, and then the function clear the colors using button.style. 
+
+- During the process I learned about timers, and how tricky they can be to set-up. I have learned that there are a few different ways to set up a timer, but some of them sometimes only counted up, minutes, wouldn't work at all, or they wouldn't trigger on if-else-statements. 
+  - I reached out to the tutors, and they told me I needed a clearInterval function. After this it worked as intended.  
+
+- In my first meeting with my mentor when I presented the wireframe for the project, he added that it would be nice that if by the end, and time was plenty, I should make the make the scores to be sent by e-mail.  
+  - Upon writing code and researching I learned that it wasn't possible to do so with only javascript. I finished the function and awaited my final meeting where he showed me emailJS. 
+  - There were some problems configuring names with id's in emailJS at first, and after that I received errors in the console. This was because I had added the function to the event listener for the "game-buttons" (making it work like a submit button) thinking that it was alright. 
+  - In the end I gave the submit-form-button it's own event listener and errors stopped. 
+  - The e-mail validation wasn't working properly. Empty field triggered alerts, however inserting anything in both fields submitted successfully.
+  - The HTML with type=email and required also didn't work as intended.
+  - This was solved by changing the button to an input instead, and updating that in the event listener. 
+
+## Validator Testing
+---
+### HTML
+
+- Few errors that have been fixed with official W3C HTML Validator.
+
+### CSS
+
+- Recieved some typing errors that have been fixed. Validated with W3C (Jigsaw) CSS Validator.
+
+### JSHint
+
+- Received comment: "Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (isCorrectAnswer, currentQuestion, answerButton, correctAnswerHandler, timeFunction, getNextQuestion, showQuestion, showPopup)". 
+  - They are all working as intended though. 
+
+- There are 4 undefined variables: minutes, seconds, Promise, emailjs - but their functions work properly. 
+
+- No console errors are triggering.
+
+### Accessibility
+- Confirmed that fonts and colors are readable and site is accessisble through Lighthouse in DevTools. 
+
+<img> ![An image showing the scores of 96 in accessibility and a score of 100 in performance, best practices and SEO in the Lighthouse Tool in DevTools.](assets/images/lighthouse-scores.png)
+
+### Unfixed Bugs
+
+- The timer actually start at 00:00 - then goes up to 01.00 before counting down, which means players actually get about 62 seconds to play the game. 
+
+- There is a minor inconvenience at the start of the game: About half of the times on Safari / Chrome the alert triggers before the page has been loaded in the back. 
+  - The idea is that while you read the alert, and recieve further instructions to look at the bottom (to read rules), it actually wont load fast enough. 
+  - In the event of this, players then have to press OK - start the game, read the rules at the bottom, and then refresh page to get back the time lost. This solution is presented in the alert. 
+  - FireFox does not have this issue. 
+
+- Not really a bug, more of a disclaimer: I intended to use real snapshots / images for many of the movies, however I do not have rights for any good ones. 
+  - All photos used are licensed for "creative" use, however many photos are of lower quality and not being able to find the right sizes has impacted the overall style. 
+
+- I had intended to use something different instead of the alert in the beginning to confirm player is ready, like a pop-up, button or model, but time ran out. 
+
+## Deployment
+
+- The Site was deployed to the GitHub pages. The steps to deploy are as follows:
+  - In the GitHub repository navigate yourself to the Settings tab.
+  - From the source section drop-down menu, select the Main branch. 
+  - Once the main branch has been selected, the page provided the link to the completed website. 
+  
+- The live link could be found here: [Coolest Movie Quiz](https://j-a-s-m-i-n-j.github.io/movie-project-new/).
+
+## Credits
+---
+### Content
+
+- During Love Math we got to learned how to increment for keeping scores and also how to check answers.
+- [Love Math](https://j-a-s-m-i-n-j.github.io/love-maths-jasmin/)
+
+### Guides & Troubleshooting
+
+### Promise, Resolve, Async, Await
+- [Geeksforgeeks](https://www.geeksforgeeks.org/how-to-delay-a-loop-in-javascript-using-async-await-with-promise/) 
+
+### EmailJS
+
+- [EmailJS](https://www.emailjs.com/) 
+
+### Window.Onload  
+
+- [Geeksforgeeks](https://www.geeksforgeeks.org/how-to-run-a-function-when-the-page-is-loaded-in-javascript/)
+- [Stack Overflow](https://stackoverflow.com/questions/5721704/window-location-reload-with-clear-cache)
+
+### Hiding & Styling a Popup
+
+- [Formget](https://www.formget.com/how-to-create-pop-up-contact-form-using-javascript/)
+
+### Template for Array
+
+- [Simplestepcode](https://simplestepscode.com/javascript-quiz-tutorial/#step2)
+

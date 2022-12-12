@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm
+from .models import Post, Item
+from .forms import CommentForm, ItemForm
 
 
 
@@ -29,9 +29,10 @@ class PostDetail(View):
                 'comments': comments,
                 "commented": False,
                 'liked': liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                #"bookmarked": bookmarked,
             }, 
-                # 'total_likes': post.number_of_likes(),
+                
         )
 
     def post(self, request, slug, *args, **kwargs):
@@ -61,9 +62,10 @@ class PostDetail(View):
                 'comments': comments,
                 "commented": True,
                 'liked': liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                #"bookmarked": bookmarked,
             }, 
-                # 'total_likes': post.number_of_likes(),
+                
         )
 
 class About(View):
@@ -90,4 +92,54 @@ class PostLike(View):
             post.likes.add(self.request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-        
+
+class Bookmark(View):
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        if post.bookmarks.filter(id=request.user.id).exists():
+            post.bookmarks.remove(self.request.user)
+            bookmarked = False
+        else:
+            post.bookmarks.add(self.request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def add_item(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('PostList')
+    form = ItemForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'add_item.html', context)
+
+
+def edit_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    if request.method == 'POST':
+        form = ItemForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect('PostList')
+    form = ItemForm(instance=item)
+    context = {
+        'form': form
+    }
+    return render(request, 'edit_item.html', context)
+
+
+def toggle_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.done = not item.done
+    item.save()
+    return redirect('PostList')
+
+
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.delete()
+    return redirect('PostList')

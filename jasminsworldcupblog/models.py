@@ -15,6 +15,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    bookmark = models.ManyToManyField(User, related_name='blog_bookmark', blank=True)
 
     class Meta:
         ordering = ['-created_on']
@@ -38,6 +39,13 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+class Item(models.Model):
+    name = models.CharField(max_length=50, null=False, blank=False)
+    done = models.BooleanField(null=False, blank=False, default=False)
+
+    def __str__(self):
+        return self.name
 
 
 # Create your models here.

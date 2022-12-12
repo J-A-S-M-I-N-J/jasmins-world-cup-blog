@@ -53,7 +53,26 @@
                         {% endif %}
                         <span class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </span>
                    </strong>
-                    
+                </div>
+                <div>
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class ="d-inline" action="{% url 'bookmark' post.slug %}" method="POST">
+                                {% csrf_token %}
+
+                                {% if bookmarked %}
+                                <button type="submit" name ="blogpost_id" value="{{post.slug}}" class="btn-bookmark"><i class="fas fa-star"></i>
+                                </button>
+
+                                {% else %}
+                                <button type="submit" name ="blogpost_id" value="{{post.slug}}" class="btn-bookmark"><i class="far fa-star"></i>
+                                </button>
+                            
+                            </form>
+                            {% endif %}
+                            {% endif %}
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -62,10 +81,19 @@
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
+                  
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+   
+
+
+
+
     <div class="row">
         <div class="col">
             <hr>

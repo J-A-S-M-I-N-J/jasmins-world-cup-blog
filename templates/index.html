@@ -41,6 +41,34 @@
             </div>
         </div>
     </div>
+    {% for item in items %}
+            <tr>
+                {% if item.done %}
+                    <td><strike>{{ item.name }}</strike></td>
+                {% else %}
+                    <td>{{ item.name }}</td>
+                {% endif %}
+                <td>
+                    <a href="/toggle/{{ item.id }}">
+                        <button>Toggle</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/edit/{{ item.id }}">
+                        <button>Edit</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/delete/{{ item.id }}">
+                        <button>Delete</button>
+                    </a>
+                </td>                
+            </tr>
+        {% empty %}
+            <tr><td>Wish to write a post?</td></tr>
+        {% endfor %}
+    </table>
+    <a href="/add">Click Here.</a>
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}

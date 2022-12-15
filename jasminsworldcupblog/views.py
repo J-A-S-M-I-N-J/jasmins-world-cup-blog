@@ -18,9 +18,13 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
+        bookmarked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
+
+        if post.bookmark.filter(id=request.user.id).exists():
+            bookmarked = True
+            
         return render(
             request,
             'post_detail.html',
@@ -30,7 +34,7 @@ class PostDetail(View):
                 "commented": False,
                 'liked': liked,
                 "comment_form": CommentForm(),
-                #"bookmarked": bookmarked,
+                "bookmarked": bookmarked,
             }, 
                 
         )
@@ -63,10 +67,8 @@ class PostDetail(View):
                 "commented": True,
                 'liked': liked,
                 "comment_form": CommentForm(),
-                #"bookmarked": bookmarked,
             }, 
-                
-        )
+                   )
 
 class About(View):
     def get(self, request, *args, **kwargs):
@@ -93,14 +95,14 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-class Bookmark(View):
+class bookmark(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        if post.bookmarks.filter(id=request.user.id).exists():
-            post.bookmarks.remove(self.request.user)
-            bookmarked = False
+        if post.bookmark.filter(id=request.user.id).exists():
+            post.bookmark.remove(self.request.user)
+            # bookmarked = False
         else:
-            post.bookmarks.add(self.request.user)
+            post.bookmark.add(self.request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -143,3 +145,11 @@ def delete_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     item.delete()
     return redirect('PostList')
+
+def profile(request):
+    bookmark_post = Post.objects.filter(bookmark=request.user)
+    context = {
+        'bookmark_post': bookmark_post
+    }
+    return render(request, 'profile.html', context)
+

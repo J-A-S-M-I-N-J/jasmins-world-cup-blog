@@ -175,3 +175,10 @@ padding-top: 10px;
     color: #fff;
     text-decoration: none;
 }
+
+.bookmark_header {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.8rem;
+    margin-left: 2%;
+}

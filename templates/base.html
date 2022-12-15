@@ -44,6 +44,9 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
@@ -53,7 +56,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    
                     {% endif %}
 
                 </ul>
@@ -73,12 +75,6 @@
             </div>
         </div>
     </div>
-
-
-    <h1 class="page-title-logo text-center text-black"> JASMIN'S WORLD CUP
-        <i class="fa-light fa-futbol"></i>
-    </h1>
-
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}

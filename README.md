@@ -39,6 +39,10 @@
 
 - The link in the navbar leads you to a page where you can create an account and login. This is needed to be able to write guest-posts and like/bookmark items. When you're logged in, the navbart-link shows 'logout' and vice versa. 
 
+### Profile
+
+- For now the profile page exists so that the user can view their saved bookmarks, but could be used in future versions for things such as created posts. 
+
 ### Footer
 
 - Footer is simple with a text explaining where to go to follow me on socials. 

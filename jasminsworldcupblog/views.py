@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Item
-from .forms import CommentForm, ItemForm
+from .forms import CommentForm, PostForm
 
 
 
@@ -24,7 +24,7 @@ class PostDetail(View):
 
         if post.bookmark.filter(id=request.user.id).exists():
             bookmarked = True
-            
+
         return render(
             request,
             'post_detail.html',
@@ -109,42 +109,51 @@ class bookmark(View):
 
 def add_item(request):
     if request.method == 'POST':
-        form = ItemForm(request.POST)
+        form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
             return redirect('PostList')
-    form = ItemForm()
+    form = PostForm()
     context = {
         'form': form
     }
     return render(request, 'add_item.html', context)
 
 
-def edit_item(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
+def edit_item(request, post_id):
+    post = get_object_or_404(post, id=post_id)
+    form = PostForm(request.POST)
     if request.method == 'POST':
-        form = ItemForm(request.POST, instance=item)
+        form = PostForm(request.POST, instance=post)
         if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
             form.save()
             return redirect('PostList')
-    form = ItemForm(instance=item)
+    form = PostForm(instance=post)
     context = {
         'form': form
     }
     return render(request, 'edit_item.html', context)
 
 
-def toggle_item(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
-    item.done = not item.done
-    item.save()
-    return redirect('PostList')
+def toggle_item(request, post_id):
+    form = PostForm(request.POST)
+    if request.method == 'POST':
+        post = get_object_or_404(post, id=post_id)
+        post.done = not post.done
+        form.save()
+        return redirect('PostList')
 
 
-def delete_item(request, item_id):
-    item = get_object_or_404(Item, id=item_id)
-    item.delete()
-    return redirect('PostList')
+def delete_item(request, post_id):
+    form = PostForm(request.POST)
+    if request.method == 'POST':
+        post = get_object_or_404(post, id=post_id)
+        post.delete()
+        return redirect('PostList')
 
 def profile(request):
     bookmark_post = Post.objects.filter(bookmark=request.user)

@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +11,21 @@
     <title>Add Item</title>
 </head>
 <body>
-    <h1>Add a Todo Item:</h1>
-    <form method="POST" action="add">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-            <p>
-                <button type="submit">Add Item</button>
-            </p>
-        </div>
-    </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 col-sm-8 col-md-8 col-lg-6 col-xl-4">
+                <h1>Write a new post:</h1>
+                <form method="POST" action="add">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                        <p>
+                            <button type="submit">Send Post For Approval</button>
+                        </p>
+                    </div>
+        </form>
+    </div>
 </body>
 </html>
+
+{% endblock %}

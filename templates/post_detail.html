@@ -82,7 +82,16 @@
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
-                  
+                    {% if request.user.is_superuser %}
+                    <div>
+                        <a href="/edit/{{ post.id }}">Edit</a>
+                    </div>
+
+                    <div>
+                        <a href="/delete/{{ post.id }}">Delete</a>
+                    </div>
+
+                    {% endif %}
                     </div>
                     </div>
                 </div>

@@ -148,24 +148,20 @@ def toggle_item(request, slug):
         form.save()
         return redirect('PostList')
 
-
-def delete_item(request, slug):
+def delete_item_view(request, slug):
     text_type = 'post'
-    try:
-        post = Post.objects.get(slug=slug)
-    except Post.DoesNotExist:
-        return redirect('Home')
+    post = get_object_or_404(Post, slug=slug)
+    context = {'post': post,'text_type': text_type} 
+    return render(request, 'delete_item.html', context)
 
-    if request.user != post.author:
-        return redirect('Home')
 
-    if request.method == "POST":
+def delete_post(request, slug):
+    """ Method to delete a post"""
+    post = get_object_or_404(Post, slug=slug)
+    if post.author.id == request.user.id:
         post.delete()
-        messages.success(request, 'Your post was deleted successfully!')
-        return redirect('Home')
-
-    context = {'post': post, 'text_type': text_type}
-    return render(request, 'delete_item.html', context)    
+        messages.success(request, "Post deleted! Feel free to post a new one")
+        return (reverse("home"))
 
 def profile(request):
     bookmark_post = Post.objects.filter(bookmark=request.user)
@@ -173,4 +169,3 @@ def profile(request):
         'bookmark_post': bookmark_post
     }
     return render(request, 'profile.html', context)
-

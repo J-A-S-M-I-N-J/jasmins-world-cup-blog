@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +11,17 @@
     <title>Edit Item</title>
 </head>
 <body>
-    <h1>Edit a Todo Item:</h1>
+    <h1>Edit Post</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-                <button type="submit">Update Item</button>
+                <button type="submit">Update Post</button>
             </p>
         </div>
     </form>
 </body>
 </html>
+
+{% endblock %}

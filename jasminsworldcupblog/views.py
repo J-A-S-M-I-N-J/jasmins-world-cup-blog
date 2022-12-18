@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Item
 from .forms import CommentForm, PostForm
+from django.contrib import messages
 
 
 
@@ -122,8 +123,8 @@ def add_item(request):
     return render(request, 'add_item.html', context)
 
 
-def edit_item(request, post_id):
-    post = get_object_or_404(post, id=post_id)
+def edit_item(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     form = PostForm(request.POST)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
@@ -139,21 +140,32 @@ def edit_item(request, post_id):
     return render(request, 'edit_item.html', context)
 
 
-def toggle_item(request, post_id):
+def toggle_item(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     form = PostForm(request.POST)
     if request.method == 'POST':
-        post = get_object_or_404(post, id=post_id)
         post.done = not post.done
         form.save()
         return redirect('PostList')
 
 
-def delete_item(request, post_id):
-    form = PostForm(request.POST)
-    if request.method == 'POST':
-        post = get_object_or_404(post, id=post_id)
+def delete_item(request, slug):
+    text_type = 'post'
+    try:
+        post = Post.objects.get(slug=slug)
+    except Post.DoesNotExist:
+        return redirect('Home')
+
+    if request.user != post.author:
+        return redirect('Home')
+
+    if request.method == "POST":
         post.delete()
-        return redirect('PostList')
+        messages.success(request, 'Your post was deleted successfully!')
+        return redirect('Home')
+
+    context = {'post': post, 'text_type': text_type}
+    return render(request, 'delete_item.html', context)    
 
 def profile(request):
     bookmark_post = Post.objects.filter(bookmark=request.user)

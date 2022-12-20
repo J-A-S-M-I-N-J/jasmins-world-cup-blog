@@ -190,3 +190,11 @@ padding-top: 10px;
 .btn-edit-post-detail {
     margin-bottom: 10px;
 }
+
+a {
+    color: #000203;
+}
+
+.post-subtitle {
+    color:black;
+}

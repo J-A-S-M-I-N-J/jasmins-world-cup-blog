@@ -62,6 +62,11 @@ Much of the design is borrowed from the 'I think therefore I blog' course-materi
 
 Images on the site are all connected to football in some way or another and they are all from google sorted from the Creative Commons licenses page. 
 
+### Comments
+
+- The About, Profile, Edit and Delete-pages leave a lot of room for improvement, but getting the functionality to work was the main key and polishing design
+had to be phased out due to time-constraints. 
+
 ## Features
 ---
 
@@ -125,59 +130,124 @@ Editing a user-profile and adding flavor-text about the user.
 # Database
 ---
 
-### 
-<img> ![A screenshot of the pop-up form](assets/images/pop-up.png)
+## Blog Basics
 
-<img> ![A screenshot of my g-mail inbox after playing the game](assets/images/e-mail-submission.png)
+- The database has the models from the 'I think therefore I blog' lessons, meaning things like Likes, Created On, Author, Status, Excerpt, Image
+Updated on, Title and Slug. 
 
-## Testing
+- I have added Bookmarks to the database in order for superusers to save posts and also the posibility of deleting posts. 
 
+# Technologies Used
+## Languages
++ [HTML5](https://en.wikipedia.org/wiki/HTML5)
++ [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
++ [Python3](https://www.python.org/)
+
+## Frameworks and Libraries
++ [Django](https://www.djangoproject.com/)
++ [Pip3](https://pip.pypa.io/en/stable/)
++ [jQuery](https://jquery.com/)
++ [FontAwesome](https://fontawesome.com/)
++ [Google Fonts](https://fonts.google.com/)
++ [Bootstrap](https://getbootstrap.com/)
+
+## All Others
++ [Heroku](https://www.heroku.com/) used to deploy live site.
++ [GitHub](https://github.com/) used to host repository.
++ [GitPod](https://www.gitpod.io/) used to develop project and organise version control.
++ [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
++ [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
+
+### Testing
+
+
+<html class="h-100">
+
+## Validator Testing WC3 Markup
+
+- WC3 doesn't recognize '<html class="h-100">' as valid HTML on base.html. Also has a reaction on the delimiters on all pages. 
 <img> ![Image of page on different screen-size](assets/images/responsiveness.png)
+
+## W3C CSS
+
+- No errors found. 
+
+## Python Automated Tests
+
+- Ran automated tests on some of the functionalities in forms, views, and models, and the test can be found in the tests folder. 
+    - The tests don't cover everything and it's understandable that more can be asked out of these tests. 
+
+## Lighthouse
+
+- Accessability and SEO scores we're a bit lower to begin with. I changed some of the muted colors on the page originally and added more Meta-tags. 
+
+## Manual Testing
+
+- Tried writing, viewing and deleting many posts and it's working as intended. 
+- Internal and the external link on Donate-page working as intended. 
+- Created two extra accounts to see if account-creating is working at the later stage of building the page. 
 
 ## Bugs
 ---
+
+## Active Bugs
+
+- Can't get favicon to work properly and it's sending out an error when loading. 
+
 ### Solved Bugs
 
 - Solved bugs with the help of my mentor where the 'bookmark' button wasn't working properly. 
+- After deleting a post, it was getting deleted but the user wasn't redirected to the main page. 
+- Like button was displaying two hearts instead of one. 
+- Button-links we're unstylable until I found a typo. 
 
-## Validator Testing
----
-### HTML
+# Deployment
 
+## Heroku Deployment
+This project was deployed through Heroku using the following steps:
 
+### Requirements and Procfile
+Heroku needs to know which technologies are being used and any requirements, so I created files to let it know. Before creating the Heroku app, create these files using the following steps in GitPod: 
++ In the GitPod terminal, type ```pip3 freeze --local > requirements.txt``` to create your requirements file.
++ Create your Procfile and insert the following code: ```web: gunicorn ARTstop.wsgi:application``` and make sure there is no additional blank line after it. 
++ Push these files to your repository.
 
-### CSS
+### Creating Heroku App
++ Log into Heroku
++ Select 'Create New App' from your dashboard
++ Choose an app name (if there has been an app made with that name, you will be informed and will need to choose an alternative)
++ Select the appropriate region based on your location
++ Click 'Create App'
 
+### Connecting to GitHub
++ From the dashboard, click the 'Deploy' tab towards the top of the screen
++ From here, locate 'Deployment Method' and choose 'GitHub'
++ From the search bar newly appeared, locate your repository by name
++ When you have located the correct repository, click 'Connect
 
+### Heroku Postgres Database
++ Go to the resources tab in Heroku.
++ In the Add-ons search bar look for Heroku Postgres & select it.
++ Choose the Hobby Dev-Free option in plans.
++ Click submit order form.
++ Go back to the build environment and install 2 more requirements:
+  + ```pip3 install dj_databse_url```
+  + ```pip3 install psycopg2-binary```
+  make sure to add these to the requirements file using ```pip3 freeze > requirements.txt``` 
 
-### JSHint
-
-
-
-### Accessibility
-
-
-<img> ![An image showing the scores of 96 in accessibility and a score of 100 in performance, best practices and SEO in the Lighthouse Tool in DevTools.](assets/images/lighthouse-scores.png)
-
-### Unfixed Bugs
-
-- Like button showing two 'hearts' instead of one that becomes red after it's liked. 
-
-## Deployment
-
-- The Site was deployed to the GitHub pages. The steps to deploy are as follows:
-  - In the GitHub repository navigate yourself to the Settings tab.
-  - From the source section drop-down menu, select the Main branch. 
-  - Once the main branch has been selected, the page provided the link to the completed website. 
-  
-- The live link could be found here: [Coolest Movie Quiz](https://j-a-s-m-i-n-j.github.io/movie-project-new/).
 
 ## Credits
 ---
-### Content
+### Code
+
+- The code uses the building blocks from the 'I think therefore I blog' and it's functionality for the base of the blog.
+- Uses the Hello Django lessons to run tests. 
 
 
-### Guides & Troubleshooting
+## Content
+
+- Images are from google's 'creative license' sorting. 
 
 
 

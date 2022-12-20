@@ -182,3 +182,11 @@ padding-top: 10px;
     font-size: 1.8rem;
     margin-left: 2%;
 }
+
+.empty-space {
+    margin-top: 600px;
+}
+
+.btn-edit-post-detail {
+    margin-bottom: 10px;
+}

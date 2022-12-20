@@ -79,8 +79,6 @@ had to be phased out due to time-constraints.
 
 - The landing page has functional links to each post, with an image, who the author is, and title of the post with a small excerpt. Below these is the post date together with the total amount of likes. At the bottom you can click a link so that you can write a guest-article. 
 
-
-
 ### The Post-Pages
 
 - If you click the titles, you will get redirected to each post. These pages have Title and images in a neat design, and the body-text of the content below. Below the text you have buttons to like and bookmark the page. Below that you can write a comment, and view the comments on the post. The bookmark and ability to like will only be displayed if you are logged in. 
@@ -267,6 +265,7 @@ Heroku needs to know which technologies are being used and any requirements, so 
 ## Content
 
 - Images are from google's 'creative license' sorting. 
+
 
 
 

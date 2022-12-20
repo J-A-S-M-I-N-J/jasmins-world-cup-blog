@@ -84,11 +84,11 @@
                     </div>
                     {% if request.user.is_superuser %}
                     <div>
-                        <a href="/edit/{{ post.slug }}">Edit</a>
+                        <a class="btn btn-success" role="button" href="/edit/{{ post.slug }}">Edit</a>
                     </div>
 
                     <div>
-                        <a href="/deletecheck/{{ post.slug }}">Delete</a>
+                        <a class="btn btn-danger" role="button" href="/deletecheck/{{ post.slug }}">Delete</a>
                     </div>
 
                     {% endif %}

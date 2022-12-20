@@ -13,9 +13,9 @@ class TestView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
 
-    def test_that_post_detail_view_loads(self):
-        post = Post.objects.create(
-            topic=self.topic, title='xxx',
+    def test_post_detail_view_loads(self):
+        post = post.objects.create(
+            title=self.title, title='xxx')
             
         url = reverse('post_detail', kwargs={"pk": 1})
         response = self.client.get(url)
@@ -28,15 +28,15 @@ class TestView(TestCase):
 
         # login
         logged_in = self.client.login(
-            username=self.is_superuser¶[0]['username'],
-            password=self.is_superuser¶[0]['password'])
+            username=self.is_superuser[0]['username'],
+            password=self.is_superuser[0]['password'])
 
         # check we are indeed logged in
         self.assertTrue(logged_in)
 
         # make post request
         response = self.client.post('/add_item/', {
-            'title': title.objects.first().id,
+            'post': Post.objects.first().id,
             'title': 'xxx',
     
         })
@@ -55,14 +55,14 @@ class TestView(TestCase):
 
         # login
         logged_in = self.client.login(
-            username=self.is_superuser¶[0]['username'],
-            password=self.is_superuser¶[0]['password'])
+            username=self.is_superuser[0]['username'],
+            password=self.is_superuser[0]['password'])
 
         # check we are indeed logged in
         self.assertTrue(logged_in)
 
         post = Post.objects.create(
-            title=self.title, title='xxx',
+            title=self.title, title='xxx')
         url = reverse('post_delete', kwargs={"pk": 1})
         response = self.client.post(url)
 
@@ -83,7 +83,3 @@ class TestView(TestCase):
         # check that new post has been made
         posts = Post.objects.filter(title='xxx')
         self.assertEqual(len(posts), 0)
-
-    
-
-  

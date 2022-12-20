@@ -161,7 +161,7 @@ def delete_post(request, slug):
     if post.author.id == request.user.id:
         post.delete()
         messages.success(request, "Post deleted! Feel free to post a new one")
-        return (reverse("home"))
+        return (redirect("home"))
 
 def profile(request):
     bookmark_post = Post.objects.filter(bookmark=request.user)

@@ -11,12 +11,13 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Are you sure you want to delete your post (see below)?</legend>
             </fieldset>
-            <a href="{% url 'delete_post' post.slug %} ">Delete it!</a>
-            <a href="{% url 'home' %}" class="text-decoration-none">Nope, keep it!</a>
+            <a class="delete-post-btn btn btn-danger" role="button" href="{% url 'delete_post' post.slug %} ">Delete!</a>
+            <a class="keep-post-btn btn btn-success" role="button" href="{% url 'home' %}" class="text-decoration-none">Keep!</a>
         </form>
         <div class="card card-feed">
             <h2 class="my-3">{{ post.title }}</h2>
         </div>
+
     {% endif %}
 {% endblock %}
                         

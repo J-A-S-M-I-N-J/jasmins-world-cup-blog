@@ -10,6 +10,58 @@
 
 <img> ![A screenshot of the first Question on the page](assets/images/quiz-full-page.png)
 
+# User Experience
+## User Stories
+---
+### As an unregistered, I want to :
+
++ Be able to read the blog posts.
++ Be able to view the Donate & About Page.
++ Have the ability to register to the site.
++ Be able to read comments.
+
+### As a registered user, I want to:
+
++ Have the ability to like posts.
++ Be able to make comments.
++ Have the ability to bookmark my favourite posts.
++ Be able to log-out.
++ Be able to view the profile page to see my bookmarked posts. 
+
+### As a superuser, I want to:
+
++ Be able to log in to an admin panel.
++ Be able to add, delete and edit posts. 
++ Be able to approve posts through the admin panel. 
+
+## Design
+---
+### Overall feel
+
+For this site I wanted it to be easy to distinguish text and photos with clear headlines, clear text and not too much clutter. 
+
+### Color Scheme
+
+The color green is what many people associate to football because of the grass on the field, howver dark green would make it hard to read text
+so I went with a light green color instead. 
+
+### Typography
+
+
+I went with Oswald for headers and titles, which is a font that I'm very familiar with personally through my video-game background, I find it easy and clear to read.
+
+I chose Public Sans because it feels a bit 'type-writy' and bloggish. Very not-corporate. 
+
+### Bootstrap and Initial Design
+
+
+Much of the design is borrowed from the 'I think therefore I blog' course-material and tweaked for own personal preference. 
+
+### Imagery
+
+
+Images on the site are all connected to football in some way or another and they are all from google sorted from the Creative Commons licenses page. 
+
 ## Features
 ---
 
@@ -35,18 +87,45 @@
 
 - Donate-page is a page where I explain that the page needs funding in order to be able to run, and where Jasmin is trying to crowd-fund to be able to go to the World Cup. The donation-link is a paypal-image that leads right to the 'send-money' page on Paypal. 
 
+###
+
+- Register page is a simple page so that the user can create an account with a username and password. The e-mail is optional. 
+Users need to register and login to be able to like, bookmark and comment. 
+
 ### Login/Logout
 
-- The link in the navbar leads you to a page where you can create an account and login. This is needed to be able to write guest-posts and like/bookmark items. When you're logged in, the navbart-link shows 'logout' and vice versa. 
+- The link in the navbar leads you to a page where you can login and logout from your account. 
 
 ### Profile
 
-- For now the profile page exists so that the user can view their saved bookmarks, but could be used in future versions for things such as created posts. 
+- For now the profile page exists so that the user can view their saved bookmarks, but could be used in future versions for things such as created posts.
+Editing a user-profile and adding flavor-text about the user.  
 
 ### Footer
 
 - Footer is simple with a text explaining where to go to follow me on socials. 
 
+### Delete
+
+- Delete page exists for super-users, this is a simple page that asks you if you 'really' want to delete a post, currently only has post titles but could be more polished in future versions. 
+
+## Possible Future Features
++ A profile page with more tools to manage posts and a way to have other users check out profiles and read about the people.
++ Users ability to delete their account.
+
+## Defensive Design Features
+
+### Delete Post
+- When you delete a post, you're re-directed to a delete page where you're shown the title of the posts you're deleting and if you want to continue doing so. 
+
+### Authenticated vs Unauthenticated
+- Unauthenticated users can't add comments, this is to prevent spam and uphold integrity.
+- UA users can't like posts, this is to prevent like-padding and botting.  
+
+# Database
+---
+
+### 
 <img> ![A screenshot of the pop-up form](assets/images/pop-up.png)
 
 <img> ![A screenshot of my g-mail inbox after playing the game](assets/images/e-mail-submission.png)

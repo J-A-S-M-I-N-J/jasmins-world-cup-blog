@@ -7,14 +7,8 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
-class ItemForm(forms.ModelForm):
-    class Meta:
-        model = Item
-        fields = ['name', 'done']
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content']
-        
+        fields = ['title', 'content']   
 

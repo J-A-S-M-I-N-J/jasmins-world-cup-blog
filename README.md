@@ -8,8 +8,6 @@
 - The site has 6 posts per page ranked from latest-to-oldest directly on the landing page. 
 - The page is also looking for guest-writers to provide extra content, however these posts need to be approved by admin. 
 
-<img> ![A screenshot of the first Question on the page](assets/images/quiz-full-page.png)
-
 # User Experience
 ## User Stories
 ---
@@ -36,31 +34,34 @@
 
 ## Design
 ---
+
 ### Overall feel
 
-For this site I wanted it to be easy to distinguish text and photos with clear headlines, clear text and not too much clutter. 
+- For this site I wanted it to be easy to distinguish text and photos with clear headlines, clear text and not too much clutter. 
+
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/frontpage.png)
 
 ### Color Scheme
 
-The color green is what many people associate to football because of the grass on the field, howver dark green would make it hard to read text
+- The color green is what many people associate to football because of the grass on the field, howver dark green would make it hard to read text
 so I went with a light green color instead. 
 
 ### Typography
 
 
-I went with Oswald for headers and titles, which is a font that I'm very familiar with personally through my video-game background, I find it easy and clear to read.
+- I went with Oswald for headers and titles, which is a font that I'm very familiar with personally through my video-game background, I find it easy and clear to read.
 
-I chose Public Sans because it feels a bit 'type-writy' and bloggish. Very not-corporate. 
+- I chose Public Sans because it feels a bit 'type-writy' and bloggish. Very not-corporate. 
 
 ### Bootstrap and Initial Design
 
 
-Much of the design is borrowed from the 'I think therefore I blog' course-material and tweaked for own personal preference. 
+- Much of the design is borrowed from the 'I think therefore I blog' course-material and tweaked for own personal preference. 
 
 ### Imagery
 
 
-Images on the site are all connected to football in some way or another and they are all from google sorted from the Creative Commons licenses page. 
+- Images on the site are all connected to football in some way or another and they are all from google sorted from the Creative Commons licenses page. 
 
 ### Comments
 
@@ -78,11 +79,13 @@ had to be phased out due to time-constraints.
 
 - The landing page has functional links to each post, with an image, who the author is, and title of the post with a small excerpt. Below these is the post date together with the total amount of likes. At the bottom you can click a link so that you can write a guest-article. 
 
-<img> ![A screenshot showing the points being kept, timer going down and event listener triggering on click.](assets/images/game-area-green-button.png)
+
 
 ### The Post-Pages
 
 - If you click the titles, you will get redirected to each post. These pages have Title and images in a neat design, and the body-text of the content below. Below the text you have buttons to like and bookmark the page. Below that you can write a comment, and view the comments on the post. The bookmark and ability to like will only be displayed if you are logged in. 
+
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/postpage.png)
 
 ### About
 
@@ -92,10 +95,14 @@ had to be phased out due to time-constraints.
 
 - Donate-page is a page where I explain that the page needs funding in order to be able to run, and where Jasmin is trying to crowd-fund to be able to go to the World Cup. The donation-link is a paypal-image that leads right to the 'send-money' page on Paypal. 
 
-###
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/donate.png)
+
+### Register
 
 - Register page is a simple page so that the user can create an account with a username and password. The e-mail is optional. 
 Users need to register and login to be able to like, bookmark and comment. 
+
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/register.png)
 
 ### Login/Logout
 
@@ -114,14 +121,23 @@ Editing a user-profile and adding flavor-text about the user.
 
 - Delete page exists for super-users, this is a simple page that asks you if you 'really' want to delete a post, currently only has post titles but could be more polished in future versions. 
 
-## Possible Future Features
+### Comments
+
+- The post-page has a comment section.
+
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/commentsandlikes.png)
+
+### Possible Future Features
 + A profile page with more tools to manage posts and a way to have other users check out profiles and read about the people.
 + Users ability to delete their account.
 
-## Defensive Design Features
+### Defensive Design Features
 
 ### Delete Post
+
 - When you delete a post, you're re-directed to a delete page where you're shown the title of the posts you're deleting and if you want to continue doing so. 
+
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/deletepage.png)
 
 ### Authenticated vs Unauthenticated
 - Unauthenticated users can't add comments, this is to prevent spam and uphold integrity.
@@ -159,15 +175,15 @@ Updated on, Title and Slug.
 + [Lighthouse](https://developers.google.com/web/tools/lighthouse) for performance review.
 + [Responsinator](https://www.responsinator.com/) used to check site was responsive on different screen sizes.
 
-### Testing
-
+# Testing
+---
 
 <html class="h-100">
 
 ## Validator Testing WC3 Markup
 
-- WC3 doesn't recognize '<html class="h-100">' as valid HTML on base.html. Also has a reaction on the delimiters on all pages. 
-<img> ![Image of page on different screen-size](assets/images/responsiveness.png)
+- WC3 doesn't recognize html class="h-100 as valid HTML on base.html. Also has a reaction on the delimiters on all pages. 
+
 
 ## W3C CSS
 
@@ -182,18 +198,21 @@ Updated on, Title and Slug.
 
 - Accessability and SEO scores we're a bit lower to begin with. I changed some of the muted colors on the page originally and added more Meta-tags. 
 
+<img> ![A screenshot of the first Question on the page](jasminsworldcupblog/images/lighthouse.png)
+
 ## Manual Testing
 
 - Tried writing, viewing and deleting many posts and it's working as intended. 
 - Internal and the external link on Donate-page working as intended. 
 - Created two extra accounts to see if account-creating is working at the later stage of building the page. 
 
-## Bugs
+# Bugs
 ---
 
 ## Active Bugs
 
 - Can't get favicon to work properly and it's sending out an error when loading. 
+- Images don't have a set width and height. 
 
 ### Solved Bugs
 
@@ -237,9 +256,9 @@ Heroku needs to know which technologies are being used and any requirements, so 
   make sure to add these to the requirements file using ```pip3 freeze > requirements.txt``` 
 
 
-## Credits
+# Credits
 ---
-### Code
+## Code
 
 - The code uses the building blocks from the 'I think therefore I blog' and it's functionality for the base of the blog.
 - Uses the Hello Django lessons to run tests. 
